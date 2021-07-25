@@ -12,10 +12,15 @@ addBtn.addEventListener("click", function (e) {
     else {
         newNotes = JSON.parse(notes);
     }
-    newNotes.push([addTtl.value,addTxt.value]);
-    localStorage.setItem("notes", JSON.stringify(newNotes));
-    addTxt.value = "";
-    addTtl.value = "";
+    if (addTtl.value.length == 0) {
+        alert("Cannot add without a title. Add a title")
+    }
+    else {
+        newNotes.push([addTtl.value, addTxt.value]);
+        localStorage.setItem("notes", JSON.stringify(newNotes));
+        addTxt.value = "";
+        addTtl.value = "";
+    }
     // console.log(newNotes);
     showNotes();
 })
