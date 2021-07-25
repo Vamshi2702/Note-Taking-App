@@ -13,7 +13,7 @@ addBtn.addEventListener("click", function (e) {
         newNotes = JSON.parse(notes);
     }
     if (addTtl.value.length == 0) {
-        alert("Cannot add without a title. Add a title")
+        alert("Cannot add without a title. Add a title");
     }
     else {
         newNotes.push([addTtl.value, addTxt.value]);
